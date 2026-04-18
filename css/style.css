@@ -1,1 +1,96 @@
 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #ff69b4;
+  color: white;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.banner {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #ff69b4, #ffb6c1);
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: white;
+  color: #ff69b4;
+  margin-top: 15px;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.galeria {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.galeria img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 15px;
+}
