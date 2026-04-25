@@ -1,11 +1,10 @@
 :root {
     --bg-black: #080808;
-    --card-black: #121212;
+    --card-gray: #121212;
     --lilas: #a366ff;
-    --lilas-dark: #7b2cbf;
+    --lilas-glow: rgba(163, 102, 255, 0.4);
     --gold: #d4af37;
     --white: #ffffff;
-    --gray: #a0a0a0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,54 +13,52 @@ body {
     background-color: var(--bg-black);
     color: var(--white);
     font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
 /* Navbar */
-header { padding: 30px 0; border-bottom: 1px solid rgba(163, 102, 255, 0.1); }
+header { padding: 30px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Syncopate', sans-serif; font-size: 1.3rem; letter-spacing: 3px; }
+.logo { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 3px; }
 .logo span { color: var(--lilas); }
-.badge-time { border: 1px solid var(--lilas); padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; color: var(--lilas); text-transform: uppercase; }
+.specialists-badge { border: 1px solid var(--lilas); padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; color: var(--lilas); }
 
 /* Hero */
-.hero { padding: 100px 0; text-align: center; }
-.hero h1 { font-family: 'Syncopate', sans-serif; font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
-.text-lilas { color: var(--lilas); }
-.hero p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.hero { padding: 120px 0 60px; text-align: center; }
+.hero h1 { font-family: 'Syncopate', sans-serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+.text-glow { color: var(--lilas); text-shadow: 0 0 15px var(--lilas-glow); }
+.hero p { color: #888; font-size: 1.1rem; }
 
-/* Services List */
-.section-title { font-family: 'Syncopate', sans-serif; margin: 60px 0 30px; font-size: 1.5rem; text-align: center; }
+/* Services */
+.section-title { font-family: 'Syncopate', sans-serif; margin: 60px 0 30px; font-size: 1.4rem; text-align: center; }
 .services-list { display: flex; flex-direction: column; gap: 15px; }
 
 .service-item {
-    background: var(--card-black);
+    background: var(--card-gray);
     padding: 15px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     border: 1px solid transparent;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
 }
 
-.service-item:hover { border-color: var(--lilas); transform: translateX(10px); background: #1a1a1a; }
+.service-item:hover { border-color: var(--lilas); transform: translateX(10px); }
 
-.service-item img { width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-right: 20px; }
+.service-item img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; margin-right: 20px; }
 .service-info { flex: 1; }
 .service-info h3 { font-size: 1.1rem; margin-bottom: 5px; }
-.service-info span { font-size: 0.8rem; color: var(--gray); }
+.service-info p { font-size: 0.8rem; color: #666; }
 
 .btn-book {
     background: transparent;
-    color: var(--white);
+    color: white;
     border: 1px solid var(--lilas);
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
 }
 
 .btn-book:hover { background: var(--lilas); }
@@ -69,12 +66,11 @@ header { padding: 30px 0; border-bottom: 1px solid rgba(163, 102, 255, 0.1); }
 .btn-book.gold:hover { background: var(--gold); color: black; }
 
 /* Reviews */
-.reviews { padding-bottom: 100px; }
 .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.review-card { background: var(--card-black); padding: 30px; border-radius: 15px; border-top: 3px solid var(--lilas); }
+.review-card { background: var(--card-gray); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--lilas); }
 .stars { color: var(--lilas); margin-bottom: 15px; }
 
-/* Float WhatsApp */
+/* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -88,10 +84,11 @@ header { padding: 30px 0; border-bottom: 1px solid rgba(163, 102, 255, 0.1); }
     align-items: center;
     gap: 10px;
     z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 2rem; }
-    .service-item img { width: 60px; height: 60px; }
+    .service-item { flex-direction: column; text-align: center; }
+    .service-item img { margin-right: 0; margin-bottom: 15px; }
 }
