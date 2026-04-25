@@ -13,7 +13,7 @@ sr.reveal('.service-item', { interval: 150 });
 // Animação para as avaliações (vem de baixo)
 sr.reveal('.review-card', { origin: 'bottom', interval: 200, distance: '50px' });
 
-// Animação para o título e textos do Hero (vem de cima)
+// Revelação extra para o título e textos do Hero (vem de cima)
 sr.reveal('.reveal-top', { origin: 'top', distance: '50px', delay: 300, interval: 100 });
 
 
