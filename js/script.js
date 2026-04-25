@@ -1,16 +1,23 @@
-// Animações suaves de entrada
-ScrollReveal().reveal('.reveal', {
-    distance: '50px',
-    duration: 1000,
-    easing: 'cubic-bezier(0.5, 0, 0, 1)',
-    interval: 200,
-    origin: 'bottom'
+// Efeito de entrada para os serviços conforme o scroll
+const sr = ScrollReveal({
+    origin: 'right',
+    distance: '100px',
+    duration: 800,
+    delay: 100
 });
 
-// Efeito de brilho que segue o mouse (UX Premium)
-document.addEventListener('mousemove', (e) => {
-    const hero = document.querySelector('.hero');
-    const x = (e.clientX / window.innerWidth) * 100;
-    const y = (e.clientY / window.innerHeight) * 100;
-    hero.style.background = `radial-gradient(circle at ${x}% ${y}%, #1d0e33 0%, #0a0a0a 70%)`;
+sr.reveal('.service-item', { interval: 150 });
+sr.reveal('.review-card', { origin: 'bottom', interval: 200 });
+
+// Simulação de clique de agendamento (UX)
+document.querySelectorAll('.btn-book').forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Se não for o "Dia da Noiva", redireciona para o Trinks
+        if(!e.target.classList.contains('gold')) {
+            window.open('https://www.trinks.com/spaco-singular-salao-e-estetica', '_blank');
+        } else {
+            // Noivas geralmente preferem atendimento direto
+            window.location.href = "https://wa.me/seu-numero?text=Quero saber mais sobre o Dia da Noiva";
+        }
+    });
 });
