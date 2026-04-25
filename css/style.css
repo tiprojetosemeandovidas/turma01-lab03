@@ -1,1 +1,113 @@
+:root {
+    --primary: #C5A059; /* Dourado Soft */
+    --dark: #1A1A1A;
+    --light: #F9F7F2;
+    --text: #4A4A4A;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+/* Header & Nav */
+header {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(249, 247, 242, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.logo span { color: var(--primary); margin-left: 5px; font-weight: 300; }
+
+nav ul { display: flex; list-style: none; align-items: center; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80') center/cover;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span { font-style: italic; font-weight: 400; color: var(--primary); }
+
+.cta-main {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.cta-main:hover {
+    background: transparent;
+    border-color: white;
+    transform: translateY(-5px);
+}
+
+/* Services Cards */
+.services { padding: 100px 0; text-align: center; }
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    padding: 50px 30px;
+    background: white;
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+.card-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
