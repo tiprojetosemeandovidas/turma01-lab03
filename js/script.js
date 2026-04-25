@@ -1,26 +1,16 @@
-// Loader simples para garantir que a experiência comece fluida
-window.addEventListener('load', () => {
-    document.getElementById('loader').style.display = 'none';
+// Animações suaves de entrada
+ScrollReveal().reveal('.reveal', {
+    distance: '50px',
+    duration: 1000,
+    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+    interval: 200,
+    origin: 'bottom'
 });
 
-// Configuração Avançada do ScrollReveal
-const sr = ScrollReveal({
-    origin: 'bottom',
-    distance: '30px',
-    duration: 1500,
-    delay: 300,
-    reset: false
-});
-
-sr.reveal('.reveal', { interval: 200 });
-sr.reveal('.reveal-top', { origin: 'top', delay: 100 });
-sr.reveal('.reveal-bottom', { delay: 600 });
-
-// Efeito de Mouse Parallax no Hero
+// Efeito de brilho que segue o mouse (UX Premium)
 document.addEventListener('mousemove', (e) => {
-    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-    
-    const content = document.querySelector('.hero-overlay');
-    content.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    const hero = document.querySelector('.hero');
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    hero.style.background = `radial-gradient(circle at ${x}% ${y}%, #1d0e33 0%, #0a0a0a 70%)`;
 });
